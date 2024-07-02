@@ -1,12 +1,5 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*; 
 
-/**
- * Write a description of class MyWorld here.
- * 
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Beach extends World
 {
 
@@ -16,7 +9,8 @@ public class Beach extends World
      */
     public Beach()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        // Create a new world with 15x10 cells with a cell size of 60x60 pixels.
         super(15, 10, 60); 
+        this.addObject(new Police(), 0, 0);
     }
 }
