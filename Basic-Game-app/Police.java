@@ -32,7 +32,9 @@ public class Police extends Person
         
         if (this.isTouching(Robber.class)) 
         {
-            Greenfoot.stop();
+            World world = this.getWorld();
+            Beach beach = (Beach)world;
+            beach.endTheGame(true);
         }
     }
 

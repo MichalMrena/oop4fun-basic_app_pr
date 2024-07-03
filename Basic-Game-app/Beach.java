@@ -19,4 +19,18 @@ public class Beach extends World
             Greenfoot.getRandomNumber(this.getHeight())
         );
     }
+    
+    public void endTheGame(boolean win)
+    {
+        int x = this.getWidth() / 2;
+        int y = this.getHeight() / 2;
+        String message;
+        if (win) {
+            message = "The robber was caught. You won!";
+        } else {
+            message = "The robber escaped. You lost!";
+        }
+        this.showText(message, x, y);
+        Greenfoot.stop();
+    }
 }
