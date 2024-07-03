@@ -31,13 +31,14 @@ public class Police extends Actor
      */
     public void act()
     {
-        if (this.delayCounter==this.delay) 
+        if (this.delayCounter == this.delay) 
         {
             this.movement();
-            this.delayCounter=0;
+            this.delayCounter = 0;
         } else {
-            this.delayCounter=this.delayCounter+1;
+            this.delayCounter = this.delayCounter+1;
         }
+        
         if (this.isTouching(Robber.class)) 
         {
             Greenfoot.stop();

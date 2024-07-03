@@ -16,6 +16,7 @@ public class Robber extends Actor
         this.delay = 3;
         this.delayCounter = 0;
     }
+
     public void act()
     {
         if (this.delayCounter==this.delay) 
@@ -26,6 +27,7 @@ public class Robber extends Actor
             this.delayCounter=this.delayCounter+1;
         }
     }
+
     public void movement() 
     {
         this.setRotation(90*Greenfoot.getRandomNumber(4));
