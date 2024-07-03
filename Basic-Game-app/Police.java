@@ -6,23 +6,20 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Police extends Actor
+public class Police extends Person
 {
     private String up;
     private String down;
     private String left;
     private String right;
-    private int delay;
-    private int delayCounter;
 
     public Police(String up,String down,String left, String right) 
     {
+        super(3);
         this.up = up;
         this.down = down;
         this.left = left;
         this.right = right;
-        this.delay = 3;
-        this.delayCounter = 0;
     }
 
     /**
@@ -31,13 +28,7 @@ public class Police extends Actor
      */
     public void act()
     {
-        if (this.delayCounter == this.delay) 
-        {
-            this.movement();
-            this.delayCounter = 0;
-        } else {
-            this.delayCounter = this.delayCounter+1;
-        }
+        super.act();
         
         if (this.isTouching(Robber.class)) 
         {

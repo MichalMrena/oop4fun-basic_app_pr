@@ -15,11 +15,13 @@ public abstract class Person extends Actor
     {
         this(3);
     }
+
     public Person(int delay) 
     {
         this.delay = delay;
         this.delayCounter = 0;
     }
+
     public void act()
     {
         if (this.delayCounter == this.delay) 
