@@ -40,22 +40,30 @@ public class Police extends Person
 
     public void movement() 
     {
+        int x = this.getX();
+        int y = this.getY();
+        
         if (Greenfoot.isKeyDown(this.up)) 
         {
             this.setRotation(270);
-            this.move(1);
+            y = y - 1;
         } else if (Greenfoot.isKeyDown(this.down)) 
         {
             this.setRotation(90);
-            this.move(1);
-        }else if (Greenfoot.isKeyDown(this.left)) 
+            y = y + 1;
+        } else if (Greenfoot.isKeyDown(this.left)) 
         {
             this.setRotation(180);
-            this.move(1);
-        }else if (Greenfoot.isKeyDown(this.right)) 
+            x = x - 1;
+        } else if (Greenfoot.isKeyDown(this.right)) 
         {
             this.setRotation(0);
-            this.move(1);
+            x = x + 1;
+        }
+        
+        if (this.getWorld().getObjectsAt(x, y, HidingSpot.class).isEmpty())
+        {
+            this.setLocation(x, y);
         }
     }
 
