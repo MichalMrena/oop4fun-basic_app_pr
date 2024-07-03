@@ -14,8 +14,7 @@ public class Police extends Actor
     private String right;
     private int delay;
     private int delayCounter;
-    
-    
+
     public Police(String up,String down,String left, String right) 
     {
         this.up = up;
@@ -25,6 +24,7 @@ public class Police extends Actor
         this.delay = 3;
         this.delayCounter = 0;
     }
+
     /**
      * Act - do whatever the Police wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -38,9 +38,12 @@ public class Police extends Actor
         } else {
             this.delayCounter=this.delayCounter+1;
         }
-        
+        if (this.isTouching(Robber.class)) 
+        {
+            Greenfoot.stop();
+        }
     }
-    
+
     public void movement() 
     {
         if (Greenfoot.isKeyDown(this.up)) 
@@ -61,5 +64,5 @@ public class Police extends Actor
             this.move(1);
         }
     }
-    
+
 }

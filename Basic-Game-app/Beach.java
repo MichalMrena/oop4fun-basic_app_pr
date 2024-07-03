@@ -13,5 +13,10 @@ public class Beach extends World
         super(15, 10, 60); 
         this.addObject(new Police("w","s","a","d"), 0, 0);
         //this.addObject(new Police("up","down","left","right"), 1, 1);
+        this.addObject(
+            new Robber(),
+            Greenfoot.getRandomNumber(this.getWidth()),
+            Greenfoot.getRandomNumber(this.getHeight())
+        );
     }
 }
